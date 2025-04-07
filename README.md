@@ -33,22 +33,28 @@ This project focuses on analyzing the distribution, accessibility, and strategic
 - **Key findings**:
   - **Regions with the highest number of stations:** Lombardy (515), Veneto (470), Friuli Venezia Giulia (195).
   - **Regions with the lowest number of stations:** Sardinia (27), Basilicata (9).
+    <br><br>
+   <img src="images/densita.png" width="45%" />
+---
 
-### 1. 🧩 Spatial Clustering of Charging Stations
+### 2. 🧩 Spatial Clustering of Charging Stations
 - **Tool**: DBSCAN algorithm via QGIS.
 - **Goal**: Visualize clusters of EV stations to identify areas of high density.
 - **Parameters**: Min Points: 2 | Max Distance: 5 km  
 - **Findings**: Northern regions like Lombardy show higher cluster concentrations (e.g., 465 clusters), while southern areas like Basilicata show minimal presence (only 5 clusters).
-
+   <p>
+     <img src="images/cluster1.png" width="45%" />
+     <img src="images/cluster2.png" width="45%" />
+   </p>
 ---
 
-### 2. 🔗 Correlation between Stations & EV Circulation
+### 3. 🔗 Correlation between Stations & EV Circulation
 - **Method**: Pearson correlation coefficient.  
 - **Result**: A strong positive correlation (r = 0.71, p-value = 0.0005) suggesting that better infrastructure may boost EV adoption.
 
 ---
 
-### 3. 🔄 Saturation Analysis by Region
+### 4. 🔄 Saturation Analysis by Region
 - **Formula**: Saturation = EVs / Charging Stations  
 - **Interpretation**:
   - High saturation = potential congestion, need for expansion.
@@ -56,64 +62,79 @@ This project focuses on analyzing the distribution, accessibility, and strategic
 - **Insight**:  
   - *Highest*: Trentino-Alto Adige → 35,746 EVs / 151 stations.  
   - *Lowest*: Friuli-Venezia Giulia → 3,632 EVs / 195 stations.
-
+   <br><br>
+   <img src="images/saturazione.png" width="45%" />
 ---
 
-### 4. 🌍 Land Use Raster Analysis
+### 5. 🌍 Land Use Raster Analysis
 - **Data**: CORINE Land Cover 2018 from Copernicus.  
 - **Goal**: Identify the type of land where stations are located.  
 - **Result**:  
   - Urban areas: 72.8%  
   - Rural/Extra-urban: 27.2%
-
+   <p>
+     <img src="images/Corine_land_cover.png" width="45%" />
+     <img src="images/landcover2.png" width="45%" />
+   </p>
 ---
 
-### 5. 📍 Points of Interest Analysis (Strategic Zones)
+### 6. 📍 Points of Interest Analysis (Strategic Zones)
 - **Approach**: Heatmap distribution by land use.  
 - **Insight**: Stations are concentrated in limited strategic zones – mostly in:
   - Urban Areas
   - Ports
   - Roads & Railways
-
+    <br><br>
+   <img src="images/heatmap.png" width="40%" />
 ---
 
-### 6. 🛣️ Motorway Network Analysis – Focus on Lombardy
+### 7. 🛣️ Motorway Network Analysis – Focus on Lombardy
 - **Tool**: QuickOSM (for motorway network).  
 - **Goal**: Assess the presence of charging stations along highways.  
 - **Findings**:  
   - Only **64 out of 515** stations in Lombardy are on motorways.
   - Motorways rank **below rural zones** like pastures and forests in station density.
 - **Conclusion**: Reinforces the need for boosting long-distance EV travel infrastructure.
+<p>
+   <img src="images/autostrade.png" width="45%" />
+   <img src="images/autostrade2.png" width="45%" />
+</p>
 
 ---
 
-### 7. 🕒 Accessibility Analysis (Ischrones – Lombardy)
+### 8. 🕒 Accessibility Analysis (Ischrones – Lombardy)
 - **Tool**: ORS Tools in QGIS  
 - **Method**: Generate 5 and 10-minute driving isochrones around each station.  
 - **Result**:  
   - 72.9% of Lombardy is covered (≤10 min drive).  
   - 27.1% remains **uncovered**.
-
+    <br><br>
+   <img src="images/isocrone.png" width="45%" />
+   
 ---
 
-### 8. 🏙️ Urban Gaps – Lombardy
+### 9. 🏙️ Urban Gaps – Lombardy
 - Urban areas represent strategic installation points due to higher demand.
 - **Findings**:  
   - 72% of urban zones in Lombardy are covered.  
   - 28% uncovered – including entire cities like **Pavia**.
-
+<br><br>
+   <img src="images/zoneUrbaneScoperte.png" width="45%" />
 ---
 
-### 9. 🗺️ Urban Gaps – Italy-Wide
+### 10. 🗺️ Urban Gaps – Italy-Wide
 - Extended the previous analysis nationwide.
 - **Regions with highest urban coverage**:  
   - Valle d’Aosta (79%), Friuli-Venezia Giulia (72%), Lombardia (72%)  
 - **Lowest coverage**:  
   - Basilicata (16%), Sardinia (19%), Molise (20%)
-
+   <p>
+      <img src="images/zoneUrbaneScoperteItalia.png" width="45%" />
+      <img src="images/zoneUrbaneScoperteItalia2.png" width="45%" />
+   </p>
 ---
 
-### 10. 🔴 Priority Map for Future Installations
+### 11. 🔴 Priority Map for Future Installations
 - **Objective**: Identify regions with the **highest urgency** for new EV stations.
 - **Formula**: Priority = 0.4 * (Saturation_norm) + 0.3 * (EV Fleet_norm) + 0.15 * (Stations_norm) + 0.15 * (Population_norm)
 - - **Visualization**: Bubble Chart  
@@ -122,7 +143,8 @@ This project focuses on analyzing the distribution, accessibility, and strategic
 
 - **Top Priority**: Trentino-Alto Adige (0.75)  
 - **Lowest Priority**: Friuli-Venezia Giulia (0.04)
-
+<br><br>
+   <img src="images/bubbleChart.png" width="45%" />
 ---
 
 ## ✅ Final Results & Conclusions
